@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEU NOVO PROFESSOR DE INGLÊS | By Nícollas</title>
+    <style>
+      :root {
+        --bg-color: #121212;
+        --text-color: #f0f0f0;
+        --accent-color: #4CAF50;
+        --hover-color: #45a049;
+        --box-color: #1e1e1e;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        text-align: center;
+        padding: 40px;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 5px;
+      }
+      h2 {
+        font-weight: normal;
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        color: #ccc;
+      }
+      p {
+        font-size: 1.1em;
+      }
+      textarea {
+        width: 90%;
+        max-width: 600px;
+        height: 150px;
+        font-size: 1em;
+        padding: 10px;
+        margin: 20px auto;
+        display: block;
+        background-color: var(--box-color);
+        color: var(--text-color);
+        border: 1px solid #444;
+        border-radius: 8px;
+        resize: none;
+      }
+      .button, .copy-button, .lang-button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: var(--accent-color);
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        margin: 10px 6px;
+      }
+      .button:hover, .copy-button:hover, .lang-button:hover {
+        background-color: var(--hover-color);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SEU NOVO PROFESSOR DE INGLÊS</h1>
+    <h2>By Nícollas</h2>
+
+    <div id="content-pt">
+      <p>Copie e cole o texto abaixo no ChatGPT para começar sua jornada de aprendizado:</p>
+      <textarea id="promptTextPt" readonly>
+Olá, ChatGPT! A partir de agora, quero que você seja meu professor de inglês diário. Me pergunte primeiro qual é o meu nível atual (iniciante, intermediário ou avançado), e a partir disso, me ensine o idioma com métodos atrativos, inteligentes, passo a passo. Ensine desde o básico até a fluência, de forma divertida, fácil de entender e eficiente!
+      </textarea>
+      <button class="copy-button" onclick="copyToClipboard('promptTextPt')">📋 Copiar texto</button>
+      <a class="button" href="https://chat.openai.com" target="_blank">Abrir o ChatGPT</a>
+    </div>
+
+    <div id="content-en" style="display:none">
+      <p>Copy and paste the text below into ChatGPT to start your learning journey:</p>
+      <textarea id="promptTextEn" readonly>
+Hello, ChatGPT! From now on, I want you to be my daily English teacher. First, ask me what my current level is (beginner, intermediate or advanced), and from there, teach me the language using attractive, intelligent and step-by-step methods. Teach from the basics to fluency in a fun, easy-to-understand, and effective way!
+      </textarea>
+      <button class="copy-button" onclick="copyToClipboard('promptTextEn')">📋 Copy text</button>
+      <a class="button" href="https://chat.openai.com" target="_blank">Open ChatGPT</a>
+    </div>
+
+    <button class="lang-button" onclick="toggleLanguage()">🌐 Mudar para Inglês / Switch to Portuguese</button>
+
+    <script>
+      function copyToClipboard(id) {
+        const textArea = document.getElementById(id);
+        textArea.select();
+        textArea.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        alert("Texto copiado para a área de transferência!");
+      }
+
+      function toggleLanguage() {
+        const pt = document.getElementById("content-pt");
+        const en = document.getElementById("content-en");
+        pt.style.display = pt.style.display === "none" ? "block" : "none";
+        en.style.display = en.style.display === "none" ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>
